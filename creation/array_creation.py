@@ -1,7 +1,10 @@
 from core.ndarray import Array
 from exceptions.errors import DimensionMismatchError
+from validation.schemas import ArrayInput, ShapeInput
 
 def array(data):
+    ArrayInput(data=data)
+    
     if not isinstance(data, list):
         return
 
@@ -20,7 +23,9 @@ def array(data):
     return Array(data)
 
 
-def zeros(shape):
+def zeros(shape): 
+    ShapeInput(shape=list(shape))
+   
     if not shape:
         return 0
     lst = []
@@ -31,6 +36,8 @@ def zeros(shape):
 
 
 def ones(shape):
+    ShapeInput(shape=list(shape))
+    
     if not shape:
         return 1
     lst = []
