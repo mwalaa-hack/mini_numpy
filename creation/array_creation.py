@@ -23,28 +23,30 @@ def array(data):
     return Array(data)
 
 
-def zeros(shape): 
+def zeros(shape):
     ShapeInput(shape=list(shape))
-   
     if not shape:
         return 0
     lst = []
     for i in range(shape[0]):
         sub = zeros(shape[1:])
+        if isinstance(sub, Array):
+            sub = sub.data
         lst.append(sub)
-    return lst
+    return Array(lst)
 
 
 def ones(shape):
     ShapeInput(shape=list(shape))
-    
     if not shape:
         return 1
     lst = []
     for i in range(shape[0]):
         sub = ones(shape[1:])
+        if isinstance(sub, Array):
+            sub = sub.data
         lst.append(sub)
-    return lst
+    return Array(lst)
 
 
 def eye(m, n=None, k=0):

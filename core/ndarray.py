@@ -1,4 +1,4 @@
-from exceptions.errors import DimensionMismatchError, InvalidOperationError
+from exceptions.errors import DimensionMismatchError, InvalidOperationError, NonNumericDataError
 
 class Array:
     def __init__(self, data):
