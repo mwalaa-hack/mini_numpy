@@ -14,7 +14,7 @@ def array(data):
     for x in data:
         if isinstance(x, list):
             if first_len is not None and len(x) != first_len:
-                raise DimensionMismatchError("All nested lists must have the same length")
+                raise DimensionMismatchError()
             array(x)
 
     return Array(data)

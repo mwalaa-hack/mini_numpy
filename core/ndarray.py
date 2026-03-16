@@ -12,7 +12,7 @@ class Array:
             for x in item:
                 self._check_numeric(x)
         elif not isinstance(item, (int, float)):
-            raise NonNumericDataError(f"Expected a number, got: {item!r}")
+            raise NonNumericDataError()
 
     def _get_shape(self, data):
         shape = []
